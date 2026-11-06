@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bas Cha Sudhi — Chai &amp; Coffee House</title>
+  <meta name="description" content="Bas Cha Sudhi is a chai and coffee house: hand-pounded masala chai, kadak cutting chai, specialty coffee, fresh snacks and all-day brunch." />
+  <meta name="author" content="Harsh Mandaliya" />
+  <meta name="theme-color" content="#1b120c" />
+  <meta property="og:title" content="Bas Cha Sudhi — Chai & Coffee House" />
+  <meta property="og:description" content="Every story starts over chai. Bas, ek cha?" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b120c'/%3E%3Cpath d='M18 14h28l-4 38H22z' fill='none' stroke='%23f4ece1' stroke-width='3'/%3E%3Cpath d='M20 26h24l-3 24H23z' fill='%23c8864a'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@400;500;600&family=Noto+Serif+Gujarati:wght@500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <!-- Loader -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <svg class="loader-glass" viewBox="0 0 60 80">
+        <path class="lg-steam" d="M24 12c-4 5 4 8 0 13M36 10c-4 5 4 8 0 13" />
+        <clipPath id="glassClip"><path d="M12 28h36l-4 46H16z" /></clipPath>
+        <rect class="lg-fill" x="0" y="28" width="60" height="50" clip-path="url(#glassClip)" />
+        <path class="lg-body" d="M12 28h36l-4 46H16z" />
+      </svg>
+      <div class="loader-name"><span>Bas</span> <span>Cha</span> <span>Sudhi</span></div>
+      <div class="loader-count"><span>0</span>%</div>
+    </div>
+    <div class="loader-bar"><span></span></div>
+  </div>
+
+  <div class="hero-guj" aria-hidden="true">બસ ચા સુધી</div>
+  <canvas id="webgl" aria-hidden="true"></canvas>
+  <div class="cursor" aria-hidden="true"><span class="cursor-dot"></span><span class="cursor-ring"><em class="cursor-label"></em></span></div>
+  <div class="progress" aria-hidden="true"><span></span></div>
+  <div class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Nav -->
+  <header class="nav">
+    <a href="#home" class="logo" aria-label="Bas Cha Sudhi home">
+      <svg class="logo-mark" viewBox="0 0 30 38" aria-hidden="true"><path d="M3 3h24l-3 32H6z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round" /><path d="M5.2 13h19.6l-2.2 20H7.4z" fill="#c8864a" /></svg>
+      <span>Bas Cha <i>Sudhi</i></span>
+    </a>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#story">Story</a>
+      <a href="#signature">Signatures</a>
+      <a href="#menu">Menu</a>
+      <a href="#space">Space</a>
+      <a href="#events">Events</a>
+      <a href="#shop">Shop</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <button class="bag magnetic" aria-label="Shopping bag"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M5 8h14l-1.2 12H6.2zM9 8V6a3 3 0 0 1 6 0v2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" /></svg><span class="bag-count">0</span></button>
+    <a href="#visit" class="btn btn-sm btn-primary magnetic nav-cta">Reserve</a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+  <div class="mobile-menu" aria-hidden="true">
+    <a href="#story">Story</a>
+    <a href="#signature">Signatures</a>
+    <a href="#menu">Menu</a>
+    <a href="#space">Space</a>
+    <a href="#events">Events</a>
+    <a href="#shop">Shop</a>
+    <a href="#visit">Visit</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home" data-cup="0.42,-0.06,0.95,0.5" data-cup-m="0,-0.5,0.85,0.5" data-drink="masala">
+      <div class="container hero-inner">
+        <p class="eyebrow hero-eyebrow"><span class="dot"></span><span class="open-status">Chai · Coffee · Conversations</span></p>
+        <h1 class="hero-title split">Bas Cha<br /><em>Sudhi.</em></h1>
+        <p class="hero-sub fade-in">Every great story starts with <strong>“bas, ek cha?”</strong> Hand-pounded masala chai, specialty coffee and snacks that make you stay a little longer.</p>
+        <div class="hero-cta fade-in">
+          <a class="btn btn-primary magnetic" href="#menu">See the menu <span class="arrow">→</span></a>
+          <a class="btn btn-ghost magnetic" href="#visit">Book a table</a>
+        </div>
+      </div>
+      <div class="hero-meta container fade-in">
+        <div class="meta-item"><span>Open today</span><strong>7:00 AM — 11:30 PM</strong></div>
+        <div class="meta-item"><span>Rated</span><strong>4.9 ★ · 3.1k reviews</strong></div>
+        <div class="meta-item hide-sm"><span>Cups poured</span><strong>2,40,000+</strong></div>
+        <div class="scroll-hint"><span class="scroll-line"></span>Scroll to sip</div>
+      </div>
+      <div class="badge fade-in" aria-hidden="true">
+        <svg viewBox="0 0 120 120">
+          <defs><path id="circle" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" /></defs>
+          <text><textPath href="#circle">FRESH CHAI · ALL DAY · EVERY DAY · </textPath></text>
+        </svg>
+        <span class="badge-core">☕</span>
+      </div>
+    </section>
+
+    <!-- CROSSING TAPES (scroll-velocity marquee) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="ic-glass" viewBox="0 0 30 38"><path d="M3 3h24l-3 32H6z" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round" /><path d="M5.2 13h19.6l-2.2 20H7.4z" fill="currentColor" /></symbol>
+      <symbol id="ic-bean" viewBox="0 0 24 32"><ellipse cx="12" cy="16" rx="10" ry="14" fill="currentColor" /><path d="M10 4c5 6 -2 14 3 24" fill="none" stroke="#1b120c" stroke-width="2.2" stroke-linecap="round" /></symbol>
+      <symbol id="ic-leaf" viewBox="0 0 32 32"><path d="M4 28C4 12 14 4 28 4c0 14-8 24-24 24z" fill="currentColor" /><path d="M6 26 22 10" stroke="#1b120c" stroke-width="2" stroke-linecap="round" /></symbol>
+    </svg>
+    <div class="tapes" aria-hidden="true">
+      <div class="tape tape-a" data-dir="1">
+        <div class="tape-track">
+          <div class="tape-set">
+            <span>Masala Chai</span><svg class="tape-ic"><use href="#ic-glass" /></svg>
+            <span><em>Cutting</em> Chai</span><svg class="tape-ic"><use href="#ic-leaf" /></svg>
+            <span>Kesar Elaichi</span><svg class="tape-ic"><use href="#ic-glass" /></svg>
+            <span><em>Bun</em> Maska</span><svg class="tape-ic"><use href="#ic-bean" /></svg>
+          </div>
+        </div>
+      </div>
+      <div class="tape tape-b" data-dir="-1">
+        <div class="tape-track">
+          <div class="tape-set">
+            <span>Bas, ek cha?</span><svg class="tape-ic"><use href="#ic-bean" /></svg>
+            <span>Cold Brew</span><svg class="tape-ic"><use href="#ic-glass" /></svg>
+            <span>Velvet Latte</span><svg class="tape-ic"><use href="#ic-leaf" /></svg>
+            <span>Fresh every day</span><svg class="tape-ic"><use href="#ic-bean" /></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MANIFESTO (scroll-scrubbed words + floating photos) -->
+    <section class="manifesto" data-cup="0.9,2.8,0.6,0.4" data-cup-m="0,2.8,0.6,0.4">
+      <div class="float-img fi-1" data-speed="-0.25"><img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?w=500&q=70&auto=format&fit=crop" alt="Tea in a glass" loading="lazy" decoding="async" /></div>
+      <div class="float-img fi-2" data-speed="0.2"><img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=500&q=70&auto=format&fit=crop" alt="Fresh croissants" loading="lazy" decoding="async" /></div>
+      <div class="float-img fi-3" data-speed="-0.4"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=500&q=70&auto=format&fit=crop" alt="Chai with cookies" loading="lazy" decoding="async" /></div>
+      <div class="float-img fi-4" data-speed="0.35"><img src="https://images.unsplash.com/photo-1507133750040-4a8f57021571?w=500&q=70&auto=format&fit=crop" alt="Latte art" loading="lazy" decoding="async" /></div>
+      <div class="container">
+        <p class="eyebrow center">Our belief</p>
+        <p class="manifesto-text">We think the best conversations, the boldest ideas and the oldest friendships all start the same way. With a warm glass in your hand and someone saying, <em>“bas, ek cha sudhi.”</em></p>
+      </div>
+    </section>
+
+    <!-- STORY -->
+    <section class="story" id="story" data-cup="-0.5,-0.02,0.86,0.25" data-cup-m="0,2.8,0.6,0.2" data-drink="cutting">
+      <div class="container story-grid">
+        <div class="story-space"></div>
+        <div class="story-copy">
+          <p class="eyebrow">01 — Our story</p>
+          <h2 class="section-title split">From a roadside <em>tapri</em> to your favourite corner.</h2>
+          <p class="lead reveal">It started in 2019 with one brass kettle, a secret masala recipe from Ba’s kitchen and a tiny stall. Today we brew over 800 glasses a day, but every pot is still simmered slow, by hand, exactly the way Ba taught us.</p>
+          <div class="story-points">
+            <div class="point reveal">
+              <span class="point-icon">🫖</span>
+              <div><h3>Simmered slow</h3><p>Every pot boiled three times — never from a machine.</p></div>
+            </div>
+            <div class="point reveal">
+              <span class="point-icon">🌿</span>
+              <div><h3>Hand-pounded masala</h3><p>Cardamom, ginger, cinnamon, clove — crushed fresh every morning.</p></div>
+            </div>
+            <div class="point reveal">
+              <span class="point-icon">☕</span>
+              <div><h3>Coffee lovers welcome</h3><p>Single-origin Indian beans, roasted in small batches.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INGREDIENTS (pinned, ingredients burst out of the cup) -->
+    <section class="ingredients" id="ingredients" data-theme="dark" data-cup="0,-0.08,0.72,0.42" data-cup-m="0,-0.02,0.62,0.42" data-drink="masala">
+      <div class="ing-pin">
+        <div class="container ing-head">
+          <p class="eyebrow center">02 — What goes in</p>
+          <h2 class="section-title center split">Six things. <em>Zero shortcuts.</em></h2>
+        </div>
+        <div class="ing-labels">
+          <div class="ing-label l1"><span class="ing-n">01</span><h3>Assam CTC leaf</h3><p>Malty, bold, the backbone of every glass.</p></div>
+          <div class="ing-label l2"><span class="ing-n">02</span><h3>Green cardamom</h3><p>Kerala pods, cracked just before the boil.</p></div>
+          <div class="ing-label l3"><span class="ing-n">03</span><h3>Fresh ginger</h3><p>Grated, never powdered. That warm kick.</p></div>
+          <div class="ing-label l4"><span class="ing-n">04</span><h3>Ceylon cinnamon</h3><p>Sweet, woody and gentle on the finish.</p></div>
+          <div class="ing-label l5"><span class="ing-n">05</span><h3>Star anise &amp; clove</h3><p>A secret pinch from Ba’s recipe.</p></div>
+          <div class="ing-label l6"><span class="ing-n">06</span><h3>Full-cream milk</h3><p>From a local dairy, delivered at 5 AM.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SIGNATURE (pinned horizontal) -->
+    <section class="signature" id="signature" data-theme="dark" data-cup="-0.58,-0.3,0.66,0.32" data-cup-m="0,0.16,0.6,0.32">
+      <div class="sig-pin">
+        <div class="sig-head container">
+          <div>
+            <p class="eyebrow">03 — Signature pours</p>
+            <h2 class="section-title">Six cups.<br /><em>Endless</em> adda.</h2>
+          </div>
+          <div class="sig-counter"><span class="sig-cur">01</span><span class="sig-sep"></span><span>06</span></div>
+        </div>
+        <div class="sig-viewport">
+          <div class="sig-track">
+            <article class="sig-card" data-drink="masala">
+              <span class="sig-num">01</span>
+              <h3>Ba’s Masala Chai</h3>
+              <p class="sig-notes">Cardamom · Ginger · Clove</p>
+              <p>Our pride. Assam leaf simmered three times with hand-pounded masala and full-cream milk.</p>
+              <div class="sig-foot"><span class="tag">Bestseller</span><span class="price">₹60</span></div>
+            </article>
+            <article class="sig-card" data-drink="cutting">
+              <span class="sig-num">02</span>
+              <h3>Kadak Cutting</h3>
+              <p class="sig-notes">Strong · Short · Sweet</p>
+              <p>Half a glass, double the strength. The tapri classic that fuels every long conversation.</p>
+              <div class="sig-foot"><span class="tag">Half glass</span><span class="price">₹30</span></div>
+            </article>
+            <article class="sig-card" data-drink="kesar">
+              <span class="sig-num">03</span>
+              <h3>Kesar Elaichi</h3>
+              <p class="sig-notes">Saffron · Cardamom · Honey</p>
+              <p>Kashmiri saffron strands bloomed in milk with cardamom. Golden, royal, unforgettable.</p>
+              <div class="sig-foot"><span class="tag">Premium</span><span class="price">₹120</span></div>
+            </article>
+            <article class="sig-card" data-drink="latte">
+              <span class="sig-num">04</span>
+              <h3>Velvet Latte</h3>
+              <p class="sig-notes">Silky · Sweet · Hazelnut</p>
+              <p>Micro-foamed milk poured over a ristretto shot of Chikmagalur beans, with latte art by hand.</p>
+              <div class="sig-foot"><span class="tag">Hot / Iced</span><span class="price">₹220</span></div>
+            </article>
+            <article class="sig-card" data-drink="mocha">
+              <span class="sig-num">05</span>
+              <h3>Smoked Mocha</h3>
+              <p class="sig-notes">Cocoa · Sea salt · Smoke</p>
+              <p>70% single-estate chocolate, espresso and a whisper of smoked salt. Dessert in a cup.</p>
+              <div class="sig-foot"><span class="tag">Indulgent</span><span class="price">₹240</span></div>
+            </article>
+            <article class="sig-card" data-drink="coldbrew">
+              <span class="sig-num">06</span>
+              <h3>18-Hour Cold Brew</h3>
+              <p class="sig-notes">Molasses · Cherry · Clean</p>
+              <p>Steeped slow for 18 hours, served over a single clear ice cube. Smooth, bright, no bitterness.</p>
+              <div class="sig-foot"><span class="tag">On tap</span><span class="price">₹200</span></div>
+            </article>
+          </div>
+        </div>
+        <div class="sig-progress container"><span></span></div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process" id="process" data-cup="0.48,0,0.92,1.08" data-cup-m="0,2.8,0.5,1.05" data-drink="kesar">
+      <div class="container process-grid">
+        <div class="process-copy">
+          <p class="eyebrow">04 — The ritual</p>
+          <h2 class="section-title split">Four steps between a garden and your <em>first sip.</em></h2>
+          <ol class="steps">
+            <li class="step reveal"><span class="step-n">01</span><div><h3>Pound</h3><p>Whole spices crushed in a stone mortar at 6 AM, every single day.</p></div></li>
+            <li class="step reveal"><span class="step-n">02</span><div><h3>Boil</h3><p>Water, leaf and ginger rolled to a boil — the colour has to be just right.</p></div></li>
+            <li class="step reveal"><span class="step-n">03</span><div><h3>Simmer</h3><p>Milk in, brought up three times. Patience is the secret ingredient.</p></div></li>
+            <li class="step reveal"><span class="step-n">04</span><div><h3>Pour</h3><p>Strained from a height for that frothy top, served steaming hot.</p></div></li>
+          </ol>
+        </div>
+        <div class="process-space"></div>
+      </div>
+      <div class="container stats">
+        <div class="stat reveal"><strong data-count="800" data-suffix="+">0</strong><span>Glasses a day</span></div>
+        <div class="stat reveal"><strong data-count="3" data-suffix="×">0</strong><span>Times simmered</span></div>
+        <div class="stat reveal"><strong data-count="12">0</strong><span>Spices in our masala</span></div>
+        <div class="stat reveal"><strong data-count="7" data-suffix=" yrs">0</strong><span>Of “bas ek cha”</span></div>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu" id="menu" data-theme="dark" data-cup="0.62,-2.8,0.5,0.3" data-cup-m="0,-2.8,0.4,0.3">
+      <div class="container">
+        <div class="menu-head">
+          <div>
+            <p class="eyebrow">05 — The menu</p>
+            <h2 class="section-title split">Made fresh, <em>every day.</em></h2>
+          </div>
+          <div class="tabs" role="tablist">
+            <span class="tab-pill" aria-hidden="true"></span>
+            <button class="tab active" role="tab" data-filter="chai" aria-selected="true">Chai</button>
+            <button class="tab" role="tab" data-filter="coffee" aria-selected="false">Coffee</button>
+            <button class="tab" role="tab" data-filter="snacks" aria-selected="false">Snacks</button>
+            <button class="tab" role="tab" data-filter="brunch" aria-selected="false">Brunch &amp; Bakes</button>
+          </div>
+        </div>
+        <div class="menu-grid">
+          <!-- chai -->
+          <div class="menu-item" data-cat="chai"><div class="mi-top"><h3>Ba’s Masala Chai</h3><span class="lead-dots"></span><span>₹60</span></div><p>Hand-pounded masala, simmered three times.</p></div>
+          <div class="menu-item" data-cat="chai"><div class="mi-top"><h3>Kadak Cutting Chai</h3><span class="lead-dots"></span><span>₹30</span></div><p>Half glass, double strength. The classic.</p></div>
+          <div class="menu-item" data-cat="chai"><div class="mi-top"><h3>Adrak Chai</h3><span class="lead-dots"></span><span>₹50</span></div><p>Loads of fresh ginger for rainy days.</p></div>
+          <div class="menu-item" data-cat="chai"><div class="mi-top"><h3>Kesar Elaichi <em class="new">Royal</em></h3><span class="lead-dots"></span><span>₹120</span></div><p>Kashmiri saffron and green cardamom.</p></div>
+          <div class="menu-item" data-cat="chai"><div class="mi-top"><h3>Tandoori Chai</h3><span class="lead-dots"></span><span>₹90</span></div><p>Poured into a red-hot kulhad, smoky and frothy.</p></div>
+          <div class="menu-item" data-cat="chai"><div class="mi-top"><h3>Gud Wali Chai</h3><span class="lead-dots"></span><span>₹70</span></div><p>Sweetened with organic jaggery, no sugar.</p></div>
+          <div class="menu-item" data-cat="chai"><div class="mi-top"><h3>Lemongrass Green</h3><span class="lead-dots"></span><span>₹80</span></div><p>Light, citrusy, caffeine-gentle.</p></div>
+          <div class="menu-item" data-cat="chai"><div class="mi-top"><h3>Iced Masala Chai</h3><span class="lead-dots"></span><span>₹110</span></div><p>Our masala chai, chilled over ice.</p></div>
+          <!-- coffee -->
+          <div class="menu-item" data-cat="coffee"><div class="mi-top"><h3>Espresso</h3><span class="lead-dots"></span><span>₹140</span></div><p>Chikmagalur house blend, double shot.</p></div>
+          <div class="menu-item" data-cat="coffee"><div class="mi-top"><h3>Cappuccino</h3><span class="lead-dots"></span><span>₹190</span></div><p>Classic thirds, dusted with cacao.</p></div>
+          <div class="menu-item" data-cat="coffee"><div class="mi-top"><h3>Velvet Latte</h3><span class="lead-dots"></span><span>₹220</span></div><p>Silky micro-foam, latte art by hand.</p></div>
+          <div class="menu-item" data-cat="coffee"><div class="mi-top"><h3>Filter Kaapi</h3><span class="lead-dots"></span><span>₹110</span></div><p>South Indian decoction, frothed in a dabara.</p></div>
+          <div class="menu-item" data-cat="coffee"><div class="mi-top"><h3>Cold Brew</h3><span class="lead-dots"></span><span>₹200</span></div><p>18-hour steep, on tap.</p></div>
+          <div class="menu-item" data-cat="coffee"><div class="mi-top"><h3>Cold Coffee</h3><span class="lead-dots"></span><span>₹170</span></div><p>Thick, creamy, with a scoop of vanilla.</p></div>
+          <!-- snacks -->
+          <div class="menu-item" data-cat="snacks"><div class="mi-top"><h3>Bun Maska</h3><span class="lead-dots"></span><span>₹60</span></div><p>Soft bun loaded with butter. Dip it in chai.</p></div>
+          <div class="menu-item" data-cat="snacks"><div class="mi-top"><h3>Khari &amp; Toast</h3><span class="lead-dots"></span><span>₹50</span></div><p>Flaky khari biscuits and crisp toast.</p></div>
+          <div class="menu-item" data-cat="snacks"><div class="mi-top"><h3>Vada Pav</h3><span class="lead-dots"></span><span>₹70</span></div><p>Spicy batata vada, garlic chutney, fried chilli.</p></div>
+          <div class="menu-item" data-cat="snacks"><div class="mi-top"><h3>Cheese Masala Maggi</h3><span class="lead-dots"></span><span>₹120</span></div><p>The midnight-craving hero.</p></div>
+          <div class="menu-item" data-cat="snacks"><div class="mi-top"><h3>Grilled Sandwich</h3><span class="lead-dots"></span><span>₹140</span></div><p>Veggies, green chutney, cheese, grilled crisp.</p></div>
+          <div class="menu-item" data-cat="snacks"><div class="mi-top"><h3>Methi Thepla Plate</h3><span class="lead-dots"></span><span>₹110</span></div><p>Three theplas, chundo and dahi. Gujarati comfort.</p></div>
+          <!-- brunch -->
+          <div class="menu-item" data-cat="brunch"><div class="mi-top"><h3>Butter Croissant</h3><span class="lead-dots"></span><span>₹150</span></div><p>72-hour laminated dough, baked at dawn.</p></div>
+          <div class="menu-item" data-cat="brunch"><div class="mi-top"><h3>Avocado Sourdough</h3><span class="lead-dots"></span><span>₹320</span></div><p>Smashed avo, chilli oil, feta, microgreens.</p></div>
+          <div class="menu-item" data-cat="brunch"><div class="mi-top"><h3>Masala Omelette Pav</h3><span class="lead-dots"></span><span>₹160</span></div><p>Fluffy desi omelette, buttered pav.</p></div>
+          <div class="menu-item" data-cat="brunch"><div class="mi-top"><h3>Buttermilk Pancakes</h3><span class="lead-dots"></span><span>₹280</span></div><p>Maple, mascarpone, seasonal fruit.</p></div>
+          <div class="menu-item" data-cat="brunch"><div class="mi-top"><h3>Basque Cheesecake <em class="new">New</em></h3><span class="lead-dots"></span><span>₹260</span></div><p>Burnt top, molten centre, berry compote.</p></div>
+          <div class="menu-item" data-cat="brunch"><div class="mi-top"><h3>Chai Tiramisu</h3><span class="lead-dots"></span><span>₹240</span></div><p>Masala-chai soaked sponge, mascarpone cream.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPACE / GALLERY -->
+    <section class="space" id="space" data-cup="0.62,-2.8,0.5,0.3" data-cup-m="0,-2.8,0.4,0.3">
+      <div class="container">
+        <div class="space-head">
+          <p class="eyebrow">06 — The space</p>
+          <h2 class="section-title split">A corner for <em>every mood.</em></h2>
+          <p class="lead reveal">Window seats for solo thinkers, long tables for loud friends, and a quiet loft for laptops. Fast Wi-Fi, warm lights, good music.</p>
+        </div>
+        <div class="gallery">
+          <figure class="g-item g1" data-cursor="View"><div class="g-inner"><img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=1100&q=72&auto=format&fit=crop" alt="Café interior with plants" loading="lazy" decoding="async" /></div><figcaption>The Garden Room</figcaption></figure>
+          <figure class="g-item g2" data-cursor="View"><div class="g-inner"><img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=800&q=72&auto=format&fit=crop" alt="Brewing counter" loading="lazy" decoding="async" /></div><figcaption>The Brew Bar</figcaption></figure>
+          <figure class="g-item g3" data-cursor="View"><div class="g-inner"><img src="https://images.unsplash.com/photo-1534040385115-33dcb3acba5b?w=800&q=72&auto=format&fit=crop" alt="Window desk with coffee" loading="lazy" decoding="async" /></div><figcaption>Window Seats</figcaption></figure>
+          <figure class="g-item g4" data-cursor="View"><div class="g-inner"><img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?w=1100&q=72&auto=format&fit=crop" alt="Friends talking in the café" loading="lazy" decoding="async" /></div><figcaption>The Adda Tables</figcaption></figure>
+          <figure class="g-item g5" data-cursor="View"><div class="g-inner"><img src="https://images.unsplash.com/photo-1600093463592-8e36ae95ef56?w=800&q=72&auto=format&fit=crop" alt="Café with greenery" loading="lazy" decoding="async" /></div><figcaption>The Loft</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVENTS (sticky stacking cards) -->
+    <section class="events" id="events" data-theme="dark" data-cup="0.62,-2.8,0.5,0.3" data-cup-m="0,-2.8,0.4,0.3">
+      <div class="container">
+        <div class="events-head">
+          <p class="eyebrow">07 — Happening here</p>
+          <h2 class="section-title split">More than chai. <em>It’s a community.</em></h2>
+        </div>
+        <div class="event-stack">
+          <article class="event-card">
+            <div class="ev-img"><img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?w=900&q=72&auto=format&fit=crop" alt="Latte art pour" loading="lazy" decoding="async" /></div>
+            <div class="ev-body"><span class="ev-date"><b>Every Sat</b> 11:00 AM</span><h3>Latte Art Workshop</h3><p>Learn milk texturing and your first heart, rosetta and tulip with our head barista. All materials included.</p><div class="ev-foot"><span class="tag">₹799 / person</span><a href="#visit" class="link">Reserve a spot →</a></div></div>
+          </article>
+          <article class="event-card">
+            <div class="ev-img"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=72&auto=format&fit=crop" alt="Warm evening interior" loading="lazy" decoding="async" /></div>
+            <div class="ev-body"><span class="ev-date"><b>Every Fri</b> 8:00 PM</span><h3>Chai &amp; Unplugged Music</h3><p>Acoustic sets from local artists, fairy lights on, phones down. Free entry with any chai.</p><div class="ev-foot"><span class="tag">Free entry</span><a href="#visit" class="link">Book a table →</a></div></div>
+          </article>
+          <article class="event-card">
+            <div class="ev-img"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=900&q=72&auto=format&fit=crop" alt="Friends cheering with cups" loading="lazy" decoding="async" /></div>
+            <div class="ev-body"><span class="ev-date"><b>Last Sun</b> 5:00 PM</span><h3>Open Mic &amp; Poetry Adda</h3><p>Shayari, stand-up, stories — the stage is yours for five minutes. Bring friends, leave inspired.</p><div class="ev-foot"><span class="tag">Sign up free</span><a href="#visit" class="link">Get on the list →</a></div></div>
+          </article>
+          <article class="event-card">
+            <div class="ev-img"><img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=900&q=72&auto=format&fit=crop" alt="Tea tasting" loading="lazy" decoding="async" /></div>
+            <div class="ev-body"><span class="ev-date"><b>1st Wed</b> 6:00 PM</span><h3>Chai Tasting Flight</h3><p>Six chais from six regions of India, paired with snacks and stories from the gardens.</p><div class="ev-foot"><span class="tag">₹499 / person</span><a href="#visit" class="link">Reserve →</a></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHOP -->
+    <section class="shop" id="shop" data-cup="0.62,-2.8,0.5,0.3" data-cup-m="0,-2.8,0.4,0.3">
+      <div class="container">
+        <div class="shop-head">
+          <div>
+            <p class="eyebrow">08 — Take it home</p>
+            <h2 class="section-title split">Brew <em>Bas Cha Sudhi</em> at home.</h2>
+          </div>
+          <p class="lead reveal">Our blends, packed fresh every week. Free delivery in the city on orders above ₹499.</p>
+        </div>
+        <div class="products">
+          <article class="product reveal" style="--pc:#b4602f">
+            <div class="pack"><div class="pack-top"></div><div class="pack-label"><span class="pl-brand">Bas Cha Sudhi</span><span class="pl-name">Masala<br />Chai</span><span class="pl-weight">250 g</span></div></div>
+            <h3>Ba’s Masala Blend</h3><p>Assam CTC + 12 hand-pounded spices</p>
+            <div class="product-foot"><span class="price">₹349</span><button class="add-btn" data-item="Ba’s Masala Blend">Add +</button></div>
+          </article>
+          <article class="product reveal" style="--pc:#2f4a2a">
+            <div class="pack"><div class="pack-top"></div><div class="pack-label"><span class="pl-brand">Bas Cha Sudhi</span><span class="pl-name">Kadak<br />Assam</span><span class="pl-weight">500 g</span></div></div>
+            <h3>Kadak Assam CTC</h3><p>Strong, malty, perfect for cutting</p>
+            <div class="product-foot"><span class="price">₹249</span><button class="add-btn" data-item="Kadak Assam CTC">Add +</button></div>
+          </article>
+          <article class="product reveal" style="--pc:#2a1a10">
+            <div class="pack"><div class="pack-top"></div><div class="pack-label"><span class="pl-brand">Bas Cha Sudhi</span><span class="pl-name">House<br />Coffee</span><span class="pl-weight">250 g</span></div></div>
+            <h3>Chikmagalur Beans</h3><p>Medium roast · chocolate &amp; caramel</p>
+            <div class="product-foot"><span class="price">₹499</span><button class="add-btn" data-item="Chikmagalur Beans">Add +</button></div>
+          </article>
+          <article class="product reveal" style="--pc:#c8864a">
+            <div class="pack"><div class="pack-top"></div><div class="pack-label"><span class="pl-brand">Bas Cha Sudhi</span><span class="pl-name">Gift<br />Box</span><span class="pl-weight">4 blends</span></div></div>
+            <h3>The Adda Gift Box</h3><p>4 blends + 2 kulhads + recipe card</p>
+            <div class="product-foot"><span class="price">₹999</span><button class="add-btn" data-item="The Adda Gift Box">Add +</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews" data-cup="0.62,-2.8,0.5,0.3" data-cup-m="0,-2.8,0.4,0.3">
+      <div class="container">
+        <p class="eyebrow">09 — Kind words</p>
+        <h2 class="section-title split">Loved by <em>regulars.</em></h2>
+      </div>
+      <div class="review-row">
+        <div class="review-track">
+          <figure class="review"><blockquote>“Ba’s masala chai tastes exactly like home. I come here every single evening.”</blockquote><figcaption><span class="av">AK</span>Ananya K. · ★★★★★</figcaption></figure>
+          <figure class="review"><blockquote>“Bun maska + cutting chai for ₹90. Best date of my week, honestly.”</blockquote><figcaption><span class="av">RM</span>Rohan M. · ★★★★★</figcaption></figure>
+          <figure class="review"><blockquote>“My work-from-café spot. Fast Wi-Fi, warm staff, perfect cold brew.”</blockquote><figcaption><span class="av">SP</span>Sara P. · ★★★★★</figcaption></figure>
+          <figure class="review"><blockquote>“The Friday unplugged nights are pure magic. Fairy lights and chai.”</blockquote><figcaption><span class="av">VD</span>Vikram D. · ★★★★★</figcaption></figure>
+          <figure class="review"><blockquote>“Came for one chai, stayed for three hours. Bas cha sudhi indeed!”</blockquote><figcaption><span class="av">NJ</span>Neha J. · ★★★★★</figcaption></figure>
+          <figure class="review"><blockquote>“Ba’s masala chai tastes exactly like home. I come here every single evening.”</blockquote><figcaption><span class="av">AK</span>Ananya K. · ★★★★★</figcaption></figure>
+          <figure class="review"><blockquote>“Bun maska + cutting chai for ₹90. Best date of my week, honestly.”</blockquote><figcaption><span class="av">RM</span>Rohan M. · ★★★★★</figcaption></figure>
+          <figure class="review"><blockquote>“My work-from-café spot. Fast Wi-Fi, warm staff, perfect cold brew.”</blockquote><figcaption><span class="av">SP</span>Sara P. · ★★★★★</figcaption></figure>
+          <figure class="review"><blockquote>“The Friday unplugged nights are pure magic. Fairy lights and chai.”</blockquote><figcaption><span class="av">VD</span>Vikram D. · ★★★★★</figcaption></figure>
+          <figure class="review"><blockquote>“Came for one chai, stayed for three hours. Bas cha sudhi indeed!”</blockquote><figcaption><span class="av">NJ</span>Neha J. · ★★★★★</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq" data-cup="0.62,-2.8,0.5,0.3" data-cup-m="0,-2.8,0.4,0.3">
+      <div class="container faq-grid">
+        <div>
+          <p class="eyebrow">10 — Good to know</p>
+          <h2 class="section-title split">Questions? <em>Ask over chai.</em></h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item reveal"><summary>Do you take table reservations?<span class="faq-icon"></span></summary><div class="faq-body"><p>Yes! Book through the form below or WhatsApp us. Walk-ins are always welcome too — we keep half the tables free.</p></div></details>
+          <details class="faq-item reveal"><summary>Is there vegan or sugar-free chai?<span class="faq-icon"></span></summary><div class="faq-body"><p>Every chai can be made with oat or almond milk, and sweetened with jaggery, honey or nothing at all.</p></div></details>
+          <details class="faq-item reveal"><summary>Can I work from the café?<span class="faq-icon"></span></summary><div class="faq-body"><p>Absolutely. The loft has charging points at every seat and fast Wi-Fi. Weekday mornings are the quietest.</p></div></details>
+          <details class="faq-item reveal"><summary>Do you deliver?<span class="faq-icon"></span></summary><div class="faq-body"><p>Yes — find us on Zomato and Swiggy. Our chai blends from the shop are delivered free above ₹499.</p></div></details>
+          <details class="faq-item reveal"><summary>Can I host a private party?<span class="faq-icon"></span></summary><div class="faq-body"><p>The Garden Room seats up to 30 guests for birthdays, meetups and small celebrations. Drop us a message for packages.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT -->
+    <section class="visit" id="visit" data-cup="0.62,-2.8,0.5,0.3" data-cup-m="0,-2.8,0.4,0.3">
+      <div class="container visit-grid">
+        <div class="visit-info">
+          <p class="eyebrow">11 — Visit us</p>
+          <h2 class="section-title split">Pull up a chair. <em>We saved you one.</em></h2>
+          <div class="info-blocks">
+            <div class="info reveal"><h3>Address</h3><p>12 Law Garden Road, Navrangpura<br />Ahmedabad, Gujarat 380009</p><a href="https://maps.google.com/?q=Navrangpura+Ahmedabad" target="_blank" rel="noopener" class="link">Get directions →</a></div>
+            <div class="info reveal"><h3>Hours</h3><ul class="hours"><li><span>Mon — Fri</span><span>7:00 AM — 11:30 PM</span></li><li><span>Sat — Sun</span><span>7:00 AM — 1:00 AM</span></li></ul></div>
+            <div class="info reveal"><h3>Contact</h3><p><a href="tel:+919800000000" class="link">+91 98000 00000</a><br /><a href="mailto:hello@bascha-sudhi.in" class="link">hello@bascha-sudhi.in</a></p></div>
+            <div class="info reveal"><h3>Order online</h3><p><a href="https://www.zomato.com" target="_blank" rel="noopener" class="link">Zomato</a> · <a href="https://www.swiggy.com" target="_blank" rel="noopener" class="link">Swiggy</a></p></div>
+          </div>
+        </div>
+        <form class="reserve reveal" novalidate>
+          <h3>Reserve a table</h3>
+          <p class="form-sub">We’ll confirm within 15 minutes.</p>
+          <div class="field"><label for="r-name">Name</label><input id="r-name" name="name" required autocomplete="name" placeholder="Your name" /></div>
+          <div class="field"><label for="r-phone">Phone</label><input id="r-phone" name="phone" type="tel" required autocomplete="tel" placeholder="+91" pattern="[0-9+\s\-]{8,}" /></div>
+          <div class="field-row">
+            <div class="field"><label for="r-date">Date</label><input id="r-date" name="date" type="date" required /></div>
+            <div class="field"><label for="r-time">Time</label><input id="r-time" name="time" type="time" required /></div>
+          </div>
+          <div class="field">
+            <label>Guests</label>
+            <div class="guests">
+              <input type="radio" name="guests" id="g1" value="1" /><label for="g1">1</label>
+              <input type="radio" name="guests" id="g2" value="2" checked /><label for="g2">2</label>
+              <input type="radio" name="guests" id="g3" value="3" /><label for="g3">3</label>
+              <input type="radio" name="guests" id="g4" value="4" /><label for="g4">4</label>
+              <input type="radio" name="guests" id="g5" value="5+" /><label for="g5">5+</label>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block magnetic">Request table <span class="arrow">→</span></button>
+          <p class="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" data-theme="dark" data-cup="0.5,0.32,0.52,0.4" data-cup-m="0,0.12,0.62,0.4" data-drink="masala">
+    <div class="container footer-top">
+      <p class="eyebrow">See you soon</p>
+      <a href="#visit" class="footer-cta magnetic">Bas, ek cha?<br /><em>Come over.</em></a>
+    </div>
+    <div class="footer-big" aria-hidden="true"><span>Bas</span><span>Cha</span><span>Sudhi</span></div>
+    <div class="container footer-bottom">
+      <span>© <span class="year"></span> Harsh Mandaliya. All rights reserved.</span>
+      <div class="socials">
+        <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://wa.me/919800000000" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://www.zomato.com" target="_blank" rel="noopener">Zomato</a>
+      </div>
+      <span>Designed &amp; developed by <strong>Harsh Mandaliya</strong></span>
+      <a href="#home" class="to-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
